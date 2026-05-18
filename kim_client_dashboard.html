@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kim Harizman - Weekly Content Brief</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #f8f8f8;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .week-label {
+            font-size: 18px;
+            color: #2c2c2c;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .summary-section h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .summary-item {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .summary-value {
+            font-size: 16px;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .theme-box {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .theme-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #999;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .theme-text {
+            font-size: 16px;
+            color: #1a1a1a;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Ideas Section */
+        .ideas-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            font-weight: 600;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .idea-card {
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background: #fafafa;
+            transition: all 0.2s ease;
+        }
+
+        .idea-card:hover {
+            border-color: #1a1a1a;
+            background: white;
+        }
+
+        .idea-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .idea-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            flex: 1;
+            margin-right: 15px;
+        }
+
+        .idea-platform {
+            background: #1a1a1a;
+            color: white;
+            padding: 5px 12px;
+            font-size: 11px;
+            border-radius: 3px;
+            font-weight: 600;
+            text-transform: uppercase;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+
+        .idea-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .idea-meta strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .idea-details {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .idea-details p {
+            margin-bottom: 8px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .feedback-box {
+            margin-top: 15px;
+            padding: 12px;
+            background: white;
+            border: 1px dashed #ddd;
+            border-radius: 3px;
+        }
+
+        .feedback-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .feedback-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+
+        /* Drafts Section */
+        .drafts-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .draft-card {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .draft-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .draft-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .draft-platform {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #1a1a1a;
+            padding: 4px 10px;
+            font-size: 11px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .draft-content {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .draft-content p {
+            margin-bottom: 12px;
+        }
+
+        .draft-content strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .draft-content em {
+            color: #666;
+            font-style: italic;
+        }
+
+        .draft-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-approve {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+
+        .btn-approve:hover {
+            background: #333;
+        }
+
+        .btn-edit {
+            background: white;
+            color: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        .btn-edit:hover {
+            background: #f8f8f8;
+        }
+
+        /* Next Steps */
+        .next-steps {
+            background: #f8f8f8;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .next-steps h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .steps-list {
+            list-style: none;
+        }
+
+        .steps-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .steps-list li:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #e0e0e0;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .footer-note {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .idea-header {
+                flex-direction: column;
+            }
+
+            .idea-platform {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">KIM HARIZMAN</div>
+            <div class="tagline">Strategic Content Intelligence</div>
+            <div class="week-label">Week of May 18, 2026</div>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary-section">
+            <h2>Weekly Overview</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-label">Ideas Generated</div>
+                    <div class="summary-value">8 Approved Ideas</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Content Drafted</div>
+                    <div class="summary-value">8 Full Drafts Ready</div>
+                </div>
+            </div>
+            <div class="theme-box">
+                <div class="theme-label">Market Theme</div>
+                <div class="theme-text">Spring Market Shifts: Seller's Market Cooling, Buyer Leverage Returning</div>
+            </div>
+            <div class="theme-box" style="margin-top: 15px;">
+                <div class="theme-label">Key Signal</div>
+                <div class="theme-text">Fairfield County inventory up 18% YoY, interest rates stable at 6.8%, buyer advantage window opening</div>
+            </div>
+        </div>
+
+        <!-- Ideas -->
+        <div class="ideas-section">
+            <h2 class="section-title">Content Ideas (Ready for Feedback)</h2>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"The Buyer's Advantage is Back"</div>
+                    <div class="idea-platform">LinkedIn</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> Interest rates holding steady at 6.8%, Fairfield County inventory up 18% YoY</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> Market pendulum swinging back to buyers; strategic clients should act from a position of strength</p>
+                    <p><span class="detail-label">Hook:</span> "If you've been waiting for buyer leverage to return to Fairfield County, this is your moment."</p>
+                    <p><span class="detail-label">CTA:</span> "Let's discuss what changed in your favor this spring."</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"Inspection Contingencies Are Back on the Table"</div>
+                    <div class="idea-platform">Blog</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> Cooling seller's market means buyers can negotiate more aggressively</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> Smart buyers understand inspection results are leverage points, not just risk checks</p>
+                    <p><span class="detail-label">Format:</span> 1000-word deep dive with financial examples</p>
+                    <p><span class="detail-label">CTA:</span> "Schedule a pre-offer consultation to discuss inspection strategy"</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"Off-Market Gems: Why Privacy Matters Now More Than Ever"</div>
+                    <div class="idea-platform">Email</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> As inventory increases, off-market deals become premium positioning for sellers seeking discretion</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> Exclusive access remains the ultimate luxury advantage</p>
+                    <p><span class="detail-label">Hook:</span> "We just placed a $4.2M waterfront estate before it hit MLS. Here's how."</p>
+                    <p><span class="detail-label">Audience:</span> VIP clients, past transaction partners, high-net-worth referral network</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"Spring Listings Are Peaking - Here's What That Means for Sellers"</div>
+                    <div class="idea-platform">Instagram</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> May/June is peak listing season; sellers need to understand competitive positioning</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> More homes on market = need stronger positioning, professional staging, strategic pricing</p>
+                    <p><span class="detail-label">Format:</span> 3-slide visual carousel with data</p>
+                    <p><span class="detail-label">Hook:</span> "📈 Fairfield County has 40% more homes for sale than 6 months ago."</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"Market Timing: The One Chart Every Buyer Should See"</div>
+                    <div class="idea-platform">LinkedIn</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> Rate stability + inventory surge = rare buyer advantage window</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> Historical market cycles show windows don't stay open long; timing matters</p>
+                    <p><span class="detail-label">Format:</span> Data-focused post with embedded chart</p>
+                    <p><span class="detail-label">CTA:</span> "Save this chart. Share it with anyone considering buying this year."</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"The Renovation ROI Question Every Seller Asks (And Gets Wrong)"</div>
+                    <div class="idea-platform">Blog</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> Spring is planning season for summer renovations</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> Not all renovations return their investment; strategic choices matter in Fairfield County's luxury market</p>
+                    <p><span class="detail-label">Format:</span> 1200-word article with local data and ROI examples</p>
+                    <p><span class="detail-label">CTA:</span> "Get a free pre-sale home assessment to identify high-ROI opportunities"</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"Rate Lock Strategy: What Buyers Forget"</div>
+                    <div class="idea-platform">Email</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> With rate volatility potential, buyers need education</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> Rate locks are strategic tools; timing, duration, and contingencies matter greatly</p>
+                    <p><span class="detail-label">Format:</span> Email series, Part 1 - Personal scenario walkthrough</p>
+                    <p><span class="detail-label">Audience:</span> Mortgage-approved buyers, refinance candidates, first-time buyers</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-title">"Why Westport Waterfront is Different This Spring"</div>
+                    <div class="idea-platform">Instagram</div>
+                </div>
+                <div class="idea-meta"><strong>Why Now:</strong> Waterfront market has unique seasonal dynamics; spring is peak interest</div>
+                <div class="idea-details">
+                    <p><span class="detail-label">Key Message:</span> Waterfront scarcity creates urgency even in buyer's market</p>
+                    <p><span class="detail-label">Format:</span> Lifestyle-focused post with stunning waterfront image</p>
+                    <p><span class="detail-label">Stat:</span> Waterfront = 8% of inventory but 40% of client conversations</p>
+                </div>
+                <div class="feedback-box">
+                    <div class="feedback-label">Your Feedback</div>
+                    <textarea class="feedback-input" placeholder="Approve, request changes, or add notes..." rows="2"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Drafts -->
+        <div class="drafts-section">
+            <h2 class="section-title">Drafted Content (Preview)</h2>
+            <p style="margin-bottom: 30px; color: #666; font-size: 14px;">Here are previews of the full drafts. Each is ready to publish as-is, or customize with your edits.</p>
+
+            <div class="draft-card">
+                <div class="draft-title">"The Buyer's Advantage is Back"</div>
+                <div class="draft-platform">LinkedIn Post</div>
+                <div class="draft-content">
+                    <p>The market has turned, and if you've been watching from the sidelines, now is the time to pay attention.</p>
+                    <p>Fairfield County's inventory is up 18% year-over-year. Interest rates have stabilized around 6.8%. And for the first time in three years, buyers have genuine leverage—not because rates dropped, but because supply finally meets demand. The seller's market momentum has officially shifted.</p>
+                    <p><strong>What does this mean for you?</strong> If you've been waiting for the right moment to make a strategic move, spring 2026 is that window. The psychology changes when you're negotiating from strength instead of desperation.</p>
+                    <p><em>Full draft available in your content dashboard. Ready to post or customize.</em></p>
+                </div>
+                <div class="draft-actions">
+                    <button class="btn btn-approve">✓ Approve</button>
+                    <button class="btn btn-edit">✎ Edit Notes</button>
+                </div>
+            </div>
+
+            <div class="draft-card">
+                <div class="draft-title">"Inspection Contingencies Are Back on the Table"</div>
+                <div class="draft-platform">Blog Article (1000 words)</div>
+                <div class="draft-content">
+                    <p><strong>Inspection Contingencies Are Back on the Table: Why This Matters More Than You Think</strong></p>
+                    <p>For the past three years, inspection contingencies have been treated like luxury items in Fairfield County. Buyers waived them. Sellers expected it. Cash offers with no contingencies dominated conversations.</p>
+                    <p>But something shifted this spring. And it's more important than most people realize.</p>
+                    <p><strong>The Market Changed, So Did Your Leverage</strong></p>
+                    <p>When inventory was tight, sellers held all the cards. Now, with 40% more homes on the market, buyers can breathe again. And that means inspection contingencies are suddenly valuable tools.</p>
+                    <p><em>Full 1000-word article with real examples and strategic framework included in your content dashboard.</em></p>
+                </div>
+                <div class="draft-actions">
+                    <button class="btn btn-approve">✓ Approve</button>
+                    <button class="btn btn-edit">✎ Edit Notes</button>
+                </div>
+            </div>
+
+            <div class="draft-card">
+                <div class="draft-title">"Off-Market Gems: Why Privacy Matters Now More Than Ever"</div>
+                <div class="draft-platform">Email (Personal, Exclusive)</div>
+                <div class="draft-content">
+                    <p><strong>Subject: We Just Placed a $4.2M Home Before It Hit MLS—Here's How</strong></p>
+                    <p>Hi [Name],</p>
+                    <p>I wanted to share something that happened last week, because it illustrates why my best opportunities often never make it to the public market.</p>
+                    <p>We listed a stunning waterfront estate in Darien—$4.2M, newly renovated, on one of the most coveted stretches of coast. Before we could post photos to MLS, we had three qualified buyers ready to make offers. The home sold for asking price within 10 days.</p>
+                    <p><strong>How did that happen?</strong> Because the seller prioritized privacy over maximum exposure.</p>
+                    <p><em>Full email with complete story and call-to-action included in your content dashboard.</em></p>
+                </div>
+                <div class="draft-actions">
+                    <button class="btn btn-approve">✓ Approve</button>
+                    <button class="btn btn-edit">✎ Edit Notes</button>
+                </div>
+            </div>
+
+            <p style="color: #999; font-size: 12px; margin-top: 30px; text-align: center;">5 additional drafts available in your full content dashboard (Instagram carousel, LinkedIn chart post, renovation ROI article, rate lock email, waterfront Instagram post)</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Next Steps -->
+        <div class="next-steps">
+            <h2>Next Steps</h2>
+            <ol class="steps-list">
+                <li><span class="step-number">1.</span> Review the 8 ideas above. Leave feedback in the comment boxes or mark as approved.</li>
+                <li><span class="step-number">2.</span> Check the drafted content in your dashboard. Edit anything that doesn't feel exactly like your voice.</li>
+                <li><span class="step-number">3.</span> Approve drafts and we'll schedule publication across your platforms.</li>
+                <li><span class="step-number">4.</span> Track engagement. Which content resonates most with your audience?</li>
+                <li><span class="step-number">5.</span> Next week: New ideas based on what performs. This builds on what works.</li>
+            </ol>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-note">
+                <strong>This is your weekly content intelligence brief.</strong> All ideas and drafts are generated from real market signals, competitive positioning, and your strategic advisory positioning.
+            </div>
+            <div class="footer-note">
+                Questions? Reply to this brief or reach out directly. Everything here is ready to publish—customize to taste or use as-is.
+            </div>
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                ON VISIBILITY | Strategic Content Intelligence for Luxury Real Estate<br>
+                Week of May 18, 2026
+            </div>
+        </div>
+    </div>
+</body>
+</html>
